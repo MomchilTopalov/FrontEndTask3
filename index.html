@@ -6,17 +6,19 @@
 	</head>
 	<body>
 		<div class="cf" id="wrapper">
-			<nav id="nav"></nav>
-			<header class="cf">
-				<div class="menu-button">
-					<a href="" class="icon Menu" id="toggleMenu"></a>
+			<nav id="nav">
+				<a href="javascript:;" id="closeBtn">close</a>
+			</nav>
+			<header class="cf nav-bar">
+				<div class="menu-button cf">
+					<a href="javascript:;" class="icon Menu" id="toggleMenu"></a>
 					<input type="search" id="mySearch" name="q"  placeholder="Search...">
 				</div>
 				<div class="social-media">
-					<a class="icon Dribbble" href="" target="_blank"></a>
-					<a class="icon Linkedin" href="" target="_blank"></a>
-					<a class="icon Instagram" href="" target="_blank"></a>
-					<a class="icon Twitter" href="" target="_blank"></a>
+					<a class="icon Dribbble" href="javascript:;" target="_blank"></a>
+					<a class="icon Linkedin" href="javascript:;" target="_blank"></a>
+					<a class="icon Instagram" href="javascript:;" target="_blank"></a>
+					<a class="icon Twitter" href="javascript:;" target="_blank"></a>
 				</div>
 				<div class="heading">
 					<h1 class="main-heading">
@@ -274,13 +276,18 @@
 						<h2 class="article-heading">Everyone gets so much information all day long that they lose their common sense.</h2>
 					</div>
 					<div class="social-media-ref cf">
-						<time class="date" datetime="17-07-2014">17 July 2014</time>
-						<span class="separator">&frasl;</span>
-						<span class="comments-number">1</span>
-						<span class="comments">comment</span>
-						<a class="icon Twitter" href="https://twitter.com" target="_blank"></a>
-						<a class="icon Facebook" href="https://www.facebook.com/" target="_blank"></a>
-						<a class="icon Envelope" href="https://www.abv.bg/" target="_blank"></a>
+						<div class="article-stats cf">
+							<time class="date" datetime="17-07-2014">17 July 2014</time>
+							<span class="separator">&frasl;</span>
+							<span class="comments-number">1</span>
+							<span class="comments">comment</span>
+						</div>
+
+						<div class="article-share cf">
+							<a class="icon Envelope" href="https://www.abv.bg/" target="_blank"></a>
+							<a class="icon Facebook" href="https://www.facebook.com/" target="_blank"></a>
+							<a class="icon Twitter" href="https://twitter.com" target="_blank"></a>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -303,12 +310,16 @@
 			</footer>
 		</div>
 		<script>
-			var button = document.getElementByID('toggleMenu');
-			var nav = document.getElementByID( 'nav');
+			var button = document.getElementById('toggleMenu');
+			var nav = document.getElementById('nav');
+			var closeBtn = document.getElementById('closeBtn');
 			
-			button.addEventListner( 'click', function function_name(argument) {
-				nav.classList.toggle('active');
-			})
+			button.addEventListener('click', function function_name(argument) {
+				nav.classList.add('active');
+			});
+			closeBtn.addEventListener('click', function (argument) {
+				nav.classList.remove('active');
+			});
 		</script>
 	</body>
 </html>
