@@ -58,7 +58,7 @@ body {
 	height: 100%;
 	background: url(../img/constellation_left.svg);
 	background-repeat: no-repeat;
-	z-index: 1;
+	z-index: 0;
 }
 
 #wrapper:after {
@@ -70,12 +70,16 @@ body {
 	height: 100%;
 	background: url(../img/constellation_right.svg);
 	background-repeat: no-repeat;
-	z-index: 1;
+	z-index: 0;
+}
+
+.nav-bar {
+	position: relative;
 }
 
 .menu-button a {
 	color: #000;
-	font-size: 2.2vw;
+	font-size: 25px;
 	float: left;
 }
 
@@ -100,7 +104,7 @@ nav.active {
 	opacity: 1;
 }
 
-header, div.articles-holder, div.posts-loader, footer {
+header, .articles-holder, .posts-loader, footer {
 	margin: auto 5.556%;
 }
 
@@ -170,7 +174,7 @@ div.article-photo-container {
 	height: 83.01887%;
 }
 
-div.article-photo-container img {
+div.article-photo-container > img {
 	width: 100%;
 	display: block;
 }
@@ -203,6 +207,8 @@ div.t-and-t {
 	/*font-family: ;*/
 }
 
+.my-class .child-4 {}
+
 .social-media-ref {
 	width: 100%;
 	height: 15.09433%;
@@ -210,8 +216,18 @@ div.t-and-t {
 	padding-bottom: 11.3207%;
 	border-top: 1px solid #818181;
 }
+.social-media-ref .article-stats {
+	float: left;
+}
+.social-media-ref .article-share {
+	float: right;
+}
 
-.date, .separator, .comments-number, .comments, [class^="icon"], [class*=" icon"] {
+
+.date, .separator,
+.comments-number,
+.comments, [class^="icon"],
+[class*=" icon"] {
 	font-size: 1.2vw;
 	line-height: 4vw;
 }
@@ -258,16 +274,22 @@ footer {
 	height: 11.93012%;
 }
 
-@media (max-width:768px) {
+@media (max-width:480px) {
 	header, div.articles-holder, div.posts-loader, footer {
 		margin: auto 2%;
+	}
+
+	/* Replace with the search icon later on */
+	#mySearch {
+		display: none;
 	}
 	.social-media {
 		width: 100%;
 		margin: 10% auto 0 auto;
 	}
-	.social-media [class^="icon"], .social-media [class*=" icon"] {
-		margin: 8%;
+	.social-media [class^="icon"],
+	.social-media [class*=" icon"] {
+		margin: 30px;
 		font-size: 6.2vw;
 	}
 	.heading {
@@ -302,15 +324,22 @@ footer {
 		font-size: 9vw;
 		line-height: 10vw;
 	}
-	.date, .separator, .comments-number, .comments, [class^="icon"], [class*=" icon"] {
+	.date, .separator,
+	.comments-number,
+	.comments,
+	[class^="icon"],
+	[class*=" icon"] {
 		font-size: 4.5vw;
 		line-height: 4.5vw;
 	}
-	.date, .separator, .comments-number, .comments {
+	.date, .separator,
+	.comments-number,
+	.comments {
 		float: left;
 		margin-right: 1%;
 	}
-	.social-media-ref [class^="icon"], .social-media-ref [class*=" icon"] {
+	.social-media-ref [class^="icon"],
+	.social-media-ref [class*=" icon"] {
 		float: right;
 		margin-left: 4%;
 	}
